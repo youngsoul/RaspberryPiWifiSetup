@@ -13,17 +13,20 @@ This has worked for me on a model B Raspberry Pi.
 
 There are 2 files:
 
-RaspberryPiWifiSetup.ph
+RaspberryPiWifiSetup.py
+
 This class has a single static method that takes a ssid and an optional password,
 and produces strings for the interface and wpa_supplicant files.  It assumes WPA
 security, at the moment, but the ssid can be either broadcast or hidden.  If no
 password is given, it assume you are trying to connect to an open wifi network.
 
 createwificonfig.py
+
 This is a script that takes command line arguments for the ssid and pwd and then
 generates actual files.
 
 Usage:
+
 python createwificonfig.py -s "my ssid" -p "my password"
 
 I hope you find it useful.
