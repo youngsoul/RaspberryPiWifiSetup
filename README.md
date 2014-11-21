@@ -1,4 +1,7 @@
 
+Raspberry Pi Wifi Setup
+========================
+
 Project to help create the the interfaces and wpa_supplicant.conf files
 necessary to setup wifi on a Raspberry pi.
 
