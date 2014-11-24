@@ -11,7 +11,7 @@ iface eth0 inet dhcp
 allow-hotplug wlan0
 auto wlan0
 iface wlan0 inet dhcp
-     pre-up wpa_supplicant -Dwext -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf -B
+\tpre-up wpa_supplicant -Dwext -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf -B
 iface default inet dhcp
 
  """
@@ -20,16 +20,13 @@ wpa_supplicant_template = """
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 ap_scan=2
-eapol_version=1
 network={
      ssid="$network_ssid"
      scan_ssid=1
      proto=RSN
-     mode=0
-     pairwise=CCMP TKIP
+     pairwise=CCMP
      key_mgmt=WPA-PSK
      psk="$network_password"
-     auth_alg=OPEN
 }
 """
 
