@@ -59,7 +59,7 @@ class RaspberryPiWifiSetup:
         :return:
         '''
         intefaces_content = interfaces_template
-        if network_password is None:
+        if not network_password:
             supplicant_content = string.Template(open_wpa_supplicant_template).substitute({"network_ssid": network_ssid})
         else:
             supplicant_content = string.Template(wpa_supplicant_template).substitute({"network_ssid": network_ssid, "network_password": network_password})
