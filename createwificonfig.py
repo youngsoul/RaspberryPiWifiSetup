@@ -21,7 +21,7 @@ if __name__ == "__main__":
     argv = sys.argv[1:]
 
     try:
-        opts, args = getopt.getopt(argv, "hs:p:", ["ssid=", "pwd="])
+        opts, args = getopt.getopt(argv, "h", ["ssid=", "pwd="])
     except getopt.GetoptError:
         _usage()
         sys.exit(2)
@@ -52,6 +52,8 @@ if __name__ == "__main__":
     write_file(script_dir + "/interfaces", iface)
     write_file(script_dir + "/wpa_supplicant.conf", supplicant)
 
+    print "sudo rm /var/run/wpa_supplicant/wlan0"
+    print "sudo pkill -f wpa_supplicant.conf"
     print "run: sudo cp ./interfaces /etc/network/"
     print "run: sudo cp ./wpa_supplicant.conf /etc/wpa_supplicant/"
     print "run: sudo reboot"

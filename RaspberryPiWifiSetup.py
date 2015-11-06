@@ -16,7 +16,7 @@ iface default inet dhcp
 
  """
 
-wpa_supplicant_template = """
+wpa_supplicant_template2 = """
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 ap_scan=2
@@ -26,6 +26,15 @@ network={
      proto=RSN
      pairwise=CCMP
      key_mgmt=WPA-PSK
+     psk="$network_password"
+}
+"""
+
+wpa_supplicant_template = """
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+network={
+     ssid="$network_ssid"
      psk="$network_password"
 }
 """

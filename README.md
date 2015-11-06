@@ -27,7 +27,7 @@ generates actual files.
 
 Usage:
 
-python createwificonfig.py -s "my ssid" -p "my password"
+python createwificonfig.py --ssid="my ssid" --pwd="my password"
 
 I hope you find it useful.
 
